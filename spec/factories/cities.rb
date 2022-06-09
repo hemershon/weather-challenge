@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :city do
     user { nil }
-    name { "MyString" }
+    name { Faker::Address.city }
   end
 end

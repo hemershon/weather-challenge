@@ -2,9 +2,13 @@
 
 <h2><%= @weather['temperature'] %>&ordm;F <%= @weather['temperature_in_celsius'] %>&ordm;C</h2>
 
+<input type="hidden" id="name" value="<%= @weather['city'] %>">
+<input id="search_term" class="input" type="text" placeholder="Name City">
+
 <table>
   <tbody>
     <tr>
+
       <td>Pressure</td>
       <td><%= @weather['pressure'] %>hpa</td>
     </tr>

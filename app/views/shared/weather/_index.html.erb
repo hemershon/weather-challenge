@@ -1,0 +1,41 @@
+
+<div class="card text-center">
+<div class="card-header">
+<h1>Weather for <%= @weather['city'] %></h1>
+</div>
+
+<div class="card-body">
+  <h5 class="card-title"><h2><%= @weather['temperature'] %>&ordm;F <%= @weather['temperature_in_celsius'] %>&ordm;C</h2></h5>
+  <p class="card-text">
+  <li class="list-group-item">Pressure  <%= @weather['pressure'] %>hpa</li>
+  <li class="list-group-item">Humidity  <%= @weather['humidity'] %></li>
+  <li class="list-group-item">Min Temperature <%= @weather['min_temperature'] %>&ordm;F</li>
+  <li class="list-group-item">Max Temperature <%= @weather['max_temperature'] %>&ordm;F</li>
+  <li class="list-group-item">Wind Speed <%= @weather['wind_speed'] %>mi/h</li>
+
+  <p class="card-text"></p>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3">Temperature da cidade</span>
+    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+  </div>
+  <a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+<div class="card-footer text-muted">
+  2 days ago
+</div>
+</div>
+<% if current_user && params[:controller] == 'dashboard' %>
+<div class="column">
+<h2 class="subtitle">Favorite Cities</h2>
+
+<div id="cities">
+  <%= render @cities %>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+<% content_for :script_includes do %>
+<%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyASgFzxIvN2ZrB0dF7vIa-OTkKE87AjtRU&libraries=places&callback=activatePlacesSearch', 'data-turbolinks-track': 'reload', async: true %>
+<% end %>

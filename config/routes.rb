@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   resources :cities
   devise_for :users
   get 'dashboard/index'

@@ -1,28 +1,28 @@
-<h1>Weather for <%= @weather['city'] %></h1>
 
-<h2><%= @weather['temperature'] %>&ordm;F <%= @weather['temperature_in_celsius'] %>&ordm;C</h2>
+<div class="card text-center">
+  <div class="card-header">
+  <h1>Weather for <%= @weather['city'] %></h1>
+  </div>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Pressure</td>
-      <td><%= @weather['pressure'] %>hpa</td>
-    </tr>
-    <tr>
-      <td>Humidity</td>
-      <td><%= @weather['humidity'] %>%</td>
-    </tr>
-    <tr>
-      <td>Min Temperature</td>
-      <td><%= @weather['min_temperature'] %>&ordm;F</td>
-    </tr>
-    <tr>
-      <td>Max Temperature</td>
-      <td><%= @weather['max_temperature'] %>&ordm;F</td>
-    </tr>
-    <tr>
-      <td>Wind Speed</td>
-      <td><%= @weather['wind_speed'] %>mi/h</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="card-body">
+    <h5 class="card-title"><h2><%= @weather['temperature'] %>&ordm;F <%= @weather['temperature_in_celsius'] %>&ordm;C</h2></h5>
+    <p class="card-text">
+    <li class="list-group-item">Pressure  <%= @weather['pressure'] %>hpa</li>
+    <li class="list-group-item">Humidity  <%= @weather['humidity'] %></li>
+    <li class="list-group-item">Min Temperature <%= @weather['min_temperature'] %>&ordm;F</li>
+    <li class="list-group-item">Max Temperature <%= @weather['max_temperature'] %>&ordm;F</li>
+    <li class="list-group-item">Wind Speed <%= @weather['wind_speed'] %>mi/h</li>
+
+    <p class="card-text"></p>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon3">Temperature da cidade</span>
+      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+</div>
+</div>

@@ -44,6 +44,9 @@ busque tratar condições anormais de execução.
 
 ```shell
   docker-compose build
+
+  docker-compose run web bundle exe bundle install
+  
   docker-compose up
 ```
 

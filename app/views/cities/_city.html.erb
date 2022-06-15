@@ -1,0 +1,8 @@
+<% weather = TemperatureService.get_weather(city.name) %>
+<%= city.name %><br/>
+      <%= weather['temperature'] %>&ordm;F / <%= weather['temperature_in_celsius'] %>&ordm;C
+      <footer class="card-footer">
+      <a href="javascript:get_weather('<%= city.name %>')" class="card-footer-item">Show</a>
+      <%= link_to 'Delete', city, method: :delete, remote: true, class: 'card-footer-item', data: { confirm: 'Are you sure?' } %>
+    </footer>
+      <%= link_to 'Delete', city, method: :delete, remote: true, class: 'card-footer-item', data: { confirm: 'Are you sure?' } %>
